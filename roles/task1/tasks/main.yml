@@ -1,0 +1,24 @@
+---
+# tasks file for task1
+- name: Installing webserver
+  package: 
+    name: httpd
+    state: present
+  when: ansible_os_familiy=="fedora"
+
+- name: Installing webserver
+  apt:
+    name: apache2
+    state: present
+  when: ansible_os_familiy=="debian" 
+
+- name: Installing mysql
+  package:
+    name: mysql-server
+    state: present
+
+- name: Installing php7
+  package:
+    name: php7.4
+    state: present
+
